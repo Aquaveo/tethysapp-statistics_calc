@@ -40,7 +40,7 @@ except ImportError:
     from io import StringIO
 
 
-@login_required()
+# @login_required()
 def home(request):
     """
     Controller for the app home page.
@@ -52,7 +52,7 @@ def home(request):
 
 
 @never_cache
-@login_required()
+# @login_required()
 def preprocessing(request):
     """
     Controller for the preprocessing page.
@@ -64,7 +64,7 @@ def preprocessing(request):
 
 
 # noinspection PyBroadException
-@login_required()
+# @login_required()
 def pps_hydrograph_raw_data_ajax(request):
     """AJAX Controller for the preprocessing page. Creates a Hydrograph given the Interpolation method selected"""
     print("In the raw data ajax controller!")
@@ -166,7 +166,7 @@ def pps_hydrograph_raw_data_ajax(request):
         return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def pps_check_dates_ajax(request):
     """AJAX Controller for the preprocessing page. Checks if the user has made sure that the date range is included in
     the timeseries data"""
@@ -211,7 +211,7 @@ def pps_check_dates_ajax(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def pps_hydrograph_ajax(request):
     """AJAX Controller for the preprocessing page. Creates a Hydrograph given the Interpolation method selected"""
 
@@ -299,7 +299,7 @@ def pps_hydrograph_ajax(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def pps_csv(request):
     # noinspection PyBroadException
     try:
@@ -375,7 +375,7 @@ def pps_csv(request):
         return HttpResponse(error_message)
 
 
-@login_required()
+# @login_required()
 def merge_two_datasets(request):
     """
     Controller for the merge_two_datasets page.
@@ -406,7 +406,7 @@ def merge_two_datasets(request):
     return render(request, 'statistics_calc/merge_two_datasets.html', context)
 
 
-@login_required()
+# @login_required()
 def merged_hydrograph(request):
     """
     AJAX Controller for the merge_two_datasets page to plot a hydrograph of the datasets when merged.
@@ -528,7 +528,7 @@ def merged_hydrograph(request):
         return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def merged_csv_download(request):
     """
     AJAX Controller for the merge_two_datasets page to plot a hydrograph of the datasets when merged.
@@ -590,7 +590,7 @@ def merged_csv_download(request):
                             "and the timezones in the CSVs exist.</p>")
 
 
-@login_required()
+# @login_required()
 def calculate_single(request):
     """
     Controller for page to upload data to perform analysis on a single stream reach.
@@ -604,7 +604,7 @@ def calculate_single(request):
     return render(request, 'statistics_calc/calculate_single.html', context)
 
 
-@login_required()
+# @login_required()
 def get_metric_names_abbr(request):
     # noinspection PyBroadException
     try:
@@ -631,7 +631,7 @@ def get_metric_names_abbr(request):
         return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def hydrograph_ajax_plotly(request):
     try:
         if request.method == 'POST':
@@ -667,7 +667,7 @@ def hydrograph_ajax_plotly(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def hydrograph_daily_avg_ajax_plotly(request):
     if request.method == 'POST':
 
@@ -698,7 +698,7 @@ def hydrograph_daily_avg_ajax_plotly(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def scatter_ajax_plotly(request):
     """
     :param request: Request from the client side.
@@ -752,7 +752,7 @@ def scatter_ajax_plotly(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def make_table_ajax(request):
     """AJAX controller to make a table and display the html for the user."""
 
@@ -963,7 +963,7 @@ def make_table_ajax(request):
             return HttpResponse("An error occured")
 
 
-@login_required()
+# @login_required()
 def volume_table_ajax(request):
     """Calculates the volumes of two streams"""
 
@@ -986,14 +986,14 @@ def volume_table_ajax(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def create_persistence_benchmark(request):
     context = {}
 
     return render(request, 'statistics_calc/create_persistence_benchmark.html', context)
 
 
-@login_required()
+# @login_required()
 def visualize_persistence_benchmark(request):
     try:
         if request.method == "POST":
@@ -1052,7 +1052,7 @@ def visualize_persistence_benchmark(request):
         return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def persistence_benchmark_download(request):
     print("In the download persistence benchmark controller")
     try:
@@ -1109,14 +1109,14 @@ def persistence_benchmark_download(request):
         return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def process_a_forecast(request):
     context = {}
 
     return render(request, 'statistics_calc/process_a_forecast.html', context)
 
 
-@login_required()
+# @login_required()
 def forecast_raw_data_ajax(request):
     print("In the raw forecast data ajax controller!")
 
@@ -1148,7 +1148,7 @@ def forecast_raw_data_ajax(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def forecast_check_dates_ajax(request):
     """AJAX Controller for the preprocessing page. Checks if the user has made sure that the date range is included in
     the timeseries data"""
@@ -1187,7 +1187,7 @@ def forecast_check_dates_ajax(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def forecast_plot_ajax(request):
     """
     Controller to create a plot of the processed forecast
@@ -1243,7 +1243,7 @@ def forecast_plot_ajax(request):
         return JsonResponse(resp)
 
 
-@login_required()
+# @login_required()
 def forecast_csv_ajax(request):
     """Controller to return a csv download of the preprocessed CSV"""
     if request.method == "POST":
@@ -1287,14 +1287,14 @@ def forecast_csv_ajax(request):
         return response
 
 
-@login_required()
+# @login_required()
 def merge_forecast(request):
     context = {}
 
     return render(request, 'statistics_calc/merge_forecast.html', context)
 
 
-@login_required()
+# @login_required()
 def merge_forecast_plot_ajax(request):
     # noinspection PyBroadException
     try:
@@ -1378,14 +1378,14 @@ def merge_forecast_download_ajax(request):
 
 
 
-@login_required()
+# @login_required()
 def validate_forecast(request):
     context = {}
 
     return render(request, 'statistics_calc/validate_forecast.html', context)
 
 
-@login_required()
+# @login_required()
 def validate_forecast_plot(request):
     try:
         forecast_csv = request.FILES.get('forecast_csv', None)
@@ -1536,7 +1536,7 @@ def validate_forecast_plot(request):
         return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def validate_forecast_ensemble_metrics(request):
     if request.method == "POST":
         try:
@@ -1658,7 +1658,7 @@ def validate_forecast_ensemble_metrics(request):
             return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def validate_forecast_binary_metrics(request):
     if request.method == "POST":
         try:
@@ -1764,34 +1764,34 @@ def validate_forecast_binary_metrics(request):
             return JsonResponse(response)
 
 
-@login_required()
+# @login_required()
 def timeseries_csv_example(request):
     context = {}
 
     return render(request, 'statistics_calc/timeseries_csv_example.html', context)
 
 
-@login_required()
+# @login_required()
 def merged_timeseries_csv_example(request):
     context = {}
 
     return render(request, 'statistics_calc/merged_timeseries_csv_example.html', context)
 
 
-@login_required()
+# @login_required()
 def forecast_csv_example(request):
     context = {}
 
     return render(request, 'statistics_calc/forecast_csv_example.html', context)
 
 
-@login_required()
+# @login_required()
 def merged_forecast_csv_example(request):
     context = {}
 
     return render(request, 'statistics_calc/merged_forecast_csv_example.html', context)
 
 
-@login_required()
+# @login_required()
 def test(request):
     return render(request, 'statistics_calc/test.html', {})
