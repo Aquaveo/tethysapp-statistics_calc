@@ -38,9 +38,9 @@
         [Docs]
       </a>
     </h3>
-
-    <button type="button" class="btn btn-outline-secondary btn-block" id="create-hydrograph">Create Hydrograph</button>
-
+    <div class="d-grid gap-2">
+        <button type="button" class="btn btn-outline-secondary" id="create-hydrograph">Create Hydrograph</button>
+    </div>
     <div id="hydrograph_loader" style="display: none;">
       <br>
       <div class="loader"></div>
@@ -54,10 +54,11 @@
         [Docs]
       </a>
     </h3>
-
-    <button type="button" class="btn btn-outline-secondary btn-block" id="create-hydrograph-daily-avg">
-      Create Hydrograph of Daily Averages
-    </button>
+    <div class="d-grid gap-2">
+        <button type="button" class="btn btn-outline-secondary" id="create-hydrograph-daily-avg">
+          Create Hydrograph of Daily Averages
+        </button>
+    </div>
 
     <div id="hydrograph_daily_avg_loader" style="display: none;">
       <br>
@@ -72,9 +73,9 @@
         [Docs]
       </a>
     </h3>
-
-    <button type="button" class="btn btn-outline-secondary btn-block" id="create-scatter">Create Scatter Plot</button>
-
+    <div class="d-grid gap-2">
+        <button type="button" class="btn btn-outline-secondary" id="create-scatter">Create Scatter Plot</button>
+    </div>
     <div id="scatterplot_loader" style="display: none;">
       <br>
       <div class="loader"></div>
@@ -88,10 +89,11 @@
         [Docs]
       </a>
     </h3>
-
-    <button type="button" class="btn btn-outline-secondary btn-block" id="create-scatter-log">
-      Create Scatter Plot with Log-Log Scale
-    </button>
+    <div class="d-grid gap-2">
+        <button type="button" class="btn btn-outline-secondary" id="create-scatter-log">
+          Create Scatter Plot with Log-Log Scale
+        </button>
+    </div>
 
     <div id="scatterplot_log_loader" style="display: none;">
       <br>
@@ -117,8 +119,8 @@
           title="When a zero value is found at the i-th position in the observed OR simulated array, the i-th value of the observed AND simulated array are removed before the computation.">
       </span>
     </h3>
-    <input type="checkbox" name="remove_neg_bool" data-bs-toggle="toggle" data-bs-on="Yes" data-bs-off="No"
-           data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="mini">
+    <input type="checkbox" name="remove_neg_bool" data-toggle="toggle" data-on="Yes" data-off="No"
+           data-onstyle="success" data-offstyle="danger" data-size="mini">
 
     <h3>
       Remove Zero Values
@@ -126,8 +128,8 @@
           title="When a negative value is found at the i-th position in the observed OR simulated array, the i-th value of the observed AND simulated array are removed before the computation.">
       </span>
     </h3>
-    <input type="checkbox" name="remove_zero_bool" data-bs-toggle="toggle" data-bs-on="Yes" data-bs-off="No"
-           data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="mini">
+    <input type="checkbox" name="remove_zero_bool" data-toggle="toggle" data-on="Yes" data-off="No"
+           data-onstyle="success" data-offstyle="danger" data-size="mini">
 
     {#Optional: Date Range#}
     <h3>
@@ -136,9 +138,9 @@
           title="Allows for analysis of different time ranges. For example, if your time series spanned 20 years, you can specify to only analyze the month of May and see how your model performs in the month of May.">
       </span>
     </h3>
-    <input type="checkbox" name="date_range_bool" id="date_range_bool" data-bs-toggle="toggle" data-bs-on="Yes"
-           data-bs-off="No"
-           data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="mini">
+    <input type="checkbox" name="date_range_bool" id="date_range_bool" data-toggle="toggle" data-on="Yes"
+           data-off="No"
+           data-onstyle="success" data-offstyle="danger" data-size="mini">
 
     {#begin date#}
     <div id="date_range_form" style="display:none">

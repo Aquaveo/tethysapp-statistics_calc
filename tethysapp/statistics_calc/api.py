@@ -3,6 +3,7 @@
 # In the comments below is an example.
 
 from django.http import JsonResponse, HttpResponse
+from tethys_sdk.routing import controller
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import api_view, authentication_classes
 from hydrostats.metrics import metric_names, metric_abbr, list_of_metrics

@@ -48,9 +48,9 @@
                 [Docs]
             </a>
         </h3>
-        <input type="checkbox" id="skill_score_bool" name="skill_score_bool" data-bs-toggle="toggle" data-bs-on="Yes"
-               data-bs-off="No"
-               data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="small">
+        <input type="checkbox" id="skill_score_bool" name="skill_score_bool" data-toggle="toggle" data-on="Yes"
+               data-off="No"
+               data-onstyle="success" data-offstyle="danger" data-size="small">
         <br><br>
 
         <div id="benchmark_input_div" style="display: none;">
@@ -77,9 +77,9 @@
             </span>
         </h2>
         <hr>
-
-        <button type="button" class="btn btn-outline-secondary btn-block" id="visualize_button">Create Plot</button>
-
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-secondary" id="visualize_button">Create Plot</button>
+        </div>
         <br>
         <div id="plot">{# plotly plot goes here #}</div>
 
@@ -100,10 +100,11 @@
         <h3>
             Ensemble Metric Validation
         </h3>
-        <button type="button" class="btn btn-outline-secondary btn-block" id="validate_button_ensemble">Run Ensemble Metrics
-            Validation
-        </button>
-
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-secondary" id="validate_button_ensemble">Run Ensemble Metrics
+                Validation
+            </button>
+        </div>
         <br>
         <div id="validation_results_ensemble">{# HTML Table output goes here #}</div>
 
@@ -142,15 +143,16 @@
         <br><br><br>
 
         <p>Different Thresholds for Forecasts and Observed?</p>
-        <input type="checkbox" id="multiple-threshold-bool" name="multiple-threshold-bool" data-bs-toggle="toggle"
-               data-bs-on="Yes" data-bs-off="No" data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="small">
+        <input type="checkbox" id="multiple-threshold-bool" name="multiple-threshold-bool" data-toggle="toggle"
+               data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" data-size="small">
         <br><br>
 
         <br>
-        <button type="button" class="btn btn-outline-secondary btn-block" id="validate_button_binary">
-            Run Binary Ensemble Metrics Validation
-        </button>
-
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-outline-secondary" id="validate_button_binary">
+                Run Binary Ensemble Metrics Validation
+            </button>
+        </div>
         <br>
         <div id="validation_results_binary">{# HTML Table output goes here #}</div>
         <div id="ROC-plot">{# ROC Plot goes here #}</div>
