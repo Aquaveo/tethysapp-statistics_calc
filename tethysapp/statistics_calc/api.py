@@ -16,6 +16,7 @@ import traceback
 # noinspection PyBroadException
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
+@controller(name='calculate_metrics', url='api/calculate_metrics')
 def calculate_metrics(request):
     """
     API Controller for getting data
@@ -138,6 +139,7 @@ def calculate_metrics(request):
 
 @api_view(['GET'])
 # @authentication_classes((TokenAuthentication,))
+@controller(name='get_metrics_names_and_abbr', url='api/get_metrics_names_and_abbr')
 def get_metrics_names_and_abbr(request):
     """
     API Controller for getting data
@@ -162,6 +164,7 @@ def get_metrics_names_and_abbr(request):
 # noinspection PyBroadException
 @api_view(['POST'])
 @authentication_classes((TokenAuthentication,))
+@controller(name='create_metrics_table', url='api/create_metrics_table')
 def create_metrics_table(request):
     """
     Creates a table of metrics and returns them to the user

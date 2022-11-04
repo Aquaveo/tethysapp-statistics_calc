@@ -29,7 +29,7 @@
     {# File Input Button #}
 {#    <div class="input-group" id="csv_file_upload">#}
 {#      <label class="input-group-btn">#}
-{#            <span class="btn btn-default waves-effect waves-light">#}
+{#            <span class="btn btn-outline-secondary waves-effect waves-light">#}
 {#            CSV File Upload<input type="file" name="pps_csv" id="pps_csv" style="display: none;">#}
 {#            </span>#}
 {#      </label>#}
@@ -43,12 +43,12 @@
 
     {# Units Checkboxes #}
     <h4>Current Data Units</h4>
-    <input type="checkbox" name="current_units" data-toggle="toggle" data-on="SI" data-off="BG"
-           data-onstyle="success" data-offstyle="primary" data-size="small" id="current_units" checked>
+    <input type="checkbox" name="current_units" data-bs-toggle="toggle" data-bs-on="SI" data-bs-off="BG"
+           data-bs-onstyle="success" data-bs-offstyle="primary" data-bs-size="small" id="current_units" checked>
 
     <h4>Desired Data Units</h4>
-    <input type="checkbox" name="desired_units" data-toggle="toggle" data-on="SI" data-off="BG"
-           data-onstyle="success" data-offstyle="primary" data-size="small" id="desired_units" checked>
+    <input type="checkbox" name="desired_units" data-bs-toggle="toggle" data-bs-on="SI" data-bs-off="BG"
+           data-bs-onstyle="success" data-bs-offstyle="primary" data-bs-size="small" id="desired_units" checked>
 
     <br><br><br><br>
 
@@ -74,7 +74,7 @@
 
     <h3>
       Interpolation
-      <span style="font-size: 15px;" class="glyphicon glyphicon-info-sign icon_info"
+      <span style="font-size: 15px;" class="bi bi-info-circle-fill icon_info"
               title="Select yes if you would like to interpolate your data to either change the time frequency or fill in missing data.">
       </span>
       <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.interpolate.html" target="_blank">
@@ -82,8 +82,8 @@
       </a>
     </h3>
 
-    <input type="checkbox" id="interpolation_bool" name="interpolation_bool" data-toggle="toggle"
-           data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" data-size="small">
+    <input type="checkbox" id="interpolation_bool" name="interpolation_bool" data-bs-toggle="toggle"
+           data-bs-on="Yes" data-bs-off="No" data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="small">
 
     <br>
 
@@ -138,7 +138,7 @@
 
     <h3>
       Truncate Time Series
-      <span style="font-size: 15px;" class="glyphicon glyphicon-info-sign icon_info"
+      <span style="font-size: 15px;" class="bi bi-info-circle-fill icon_info"
             title="Select yes if you would like to only use a certain time range. e.g. if your timeseries spanned from 1992 to 2015 and you only wanted the data from the year 2002.">
       </span>
       <a href="https://hydrostats.readthedocs.io/en/stable/api/hydrostats.data.seasonal_period.html#hydrostats.data.seasonal_period"
@@ -147,8 +147,8 @@
       </a>
     </h3>
 
-    <input type="checkbox" id="time_range_bool" name="time_range_bool" data-toggle="toggle" data-on="Yes"
-           data-off="No" data-onstyle="success" data-offstyle="danger" data-size="small">
+    <input type="checkbox" id="time_range_bool" name="time_range_bool" data-bs-toggle="toggle" data-bs-on="Yes"
+           data-bs-off="No" data-bs-onstyle="success" data-bs-offstyle="danger" data-bs-size="small">
 
     <br>
 

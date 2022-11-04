@@ -1,6 +1,6 @@
 {% extends "tethys_apps/app_base.html" %}
 
-{% load staticfiles %}
+{% load static %}
 
 {% block title %}{{ tethys_app.name }}{% endblock %}
 
@@ -14,7 +14,7 @@
 
 {% block app_navigation_items %}
 
-  <li class="title">Navigation</li>
+  <li class="nav-item title">Navigation</li>
 
   {# Defining Variables Here #}
   {% url 'statistics_calc:home' as home_url %}
@@ -30,20 +30,20 @@
   {% url 'statistics_calc:merged_forecast_csv_example' as merged_forecast_csv_example %}
   {% url 'statistics_calc:forecast_csv_example' as forecast_csv_example %}
 
-  <li class="{% if request.path == home_url %}active{% endif %}">
-    <a href="{{ home_url }}">Home</a>
+  <li class="nav-item">
+    <a class="nav-link {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
   </li>
 
-  <li class="{% if request.path == preprocessing %}active{% endif %}">
-    <a href="{{ preprocessing }}">Process a Time Series</a>
+  <li class="nav-item">
+    <a class="nav-link {% if request.path == preprocessing %}active{% endif %}" href="{{ preprocessing }}">Process a Time Series</a>
   </li>
 
-  <li class="{% if request.path == merge_two_datasets %}active{% endif %}">
-    <a href="{{ merge_two_datasets }}">Merge Two Time Series</a>
+  <li class="nav-item">
+    <a class="nav-link {% if request.path == merge_two_datasets %}active{% endif %}" href="{{ merge_two_datasets }}">Merge Two Time Series</a>
   </li>
 
-  <li class="{% if request.path == validate_historical_url %}active{% endif %}">
-    <a href="{{ validate_historical_url }}">Validate Merged Time Series</a>
+  <li class="nav-item">
+    <a class="nav-link {% if request.path == validate_historical_url %}active{% endif %}" href="{{ validate_historical_url }}">Validate Merged Time Series</a>
   </li>
 
 <!--  <li class="{% if request.path == create_persistence_benchmark %}active{% endif %}">-->
@@ -62,14 +62,14 @@
 <!--    <a href="{{ validate_forecast }}">Validate a Forecast</a>-->
 <!--  </li>-->
 
-  <li class="title">Examples</li>
+  <li class="nav-item title">Examples</li>
 
-  <li class="{% if request.path == timeseries_csv_example %}active{% endif %}">
-    <a href="{{ timeseries_csv_example }}">Example Time Series CSV</a>
+  <li class="nav-item">
+    <a class="nav-link {% if request.path == timeseries_csv_example %}active{% endif %}" href="{{ timeseries_csv_example }}">Example Time Series CSV</a>
   </li>
 
-  <li class="{% if request.path == merged_timeseries_csv_example %}active{% endif %}">
-    <a href="{{ merged_timeseries_csv_example }}">Example Merged Time Series CSV</a>
+  <li class="nav-item">
+    <a class="nav-link {% if request.path == merged_timeseries_csv_example %}active{% endif %}" href="{{ merged_timeseries_csv_example }}">Example Merged Time Series CSV</a>
   </li>
 
 <!--  <li class="{% if request.path == forecast_csv_example %}active{% endif %}">-->

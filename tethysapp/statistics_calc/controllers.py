@@ -41,6 +41,7 @@ except ImportError:
 
 
 @login_required()
+@controller(name='home', url='')
 def home(request):
     """
     Controller for the app home page.
@@ -53,6 +54,7 @@ def home(request):
 
 @never_cache
 @login_required()
+@controller(name='preprocessing', url='preprocessing')
 def preprocessing(request):
     """
     Controller for the preprocessing page.
@@ -65,6 +67,7 @@ def preprocessing(request):
 
 # noinspection PyBroadException
 @login_required()
+@controller(name='pps_hydrograph_raw_data_ajax', url='pps_hydrograph_raw_data_ajax')
 def pps_hydrograph_raw_data_ajax(request):
     """AJAX Controller for the preprocessing page. Creates a Hydrograph given the Interpolation method selected"""
     print("In the raw data ajax controller!")
@@ -167,6 +170,7 @@ def pps_hydrograph_raw_data_ajax(request):
 
 
 @login_required()
+@controller(name='pps_check_dates_ajax', url='pps_check_dates_ajax')
 def pps_check_dates_ajax(request):
     """AJAX Controller for the preprocessing page. Checks if the user has made sure that the date range is included in
     the timeseries data"""
@@ -212,6 +216,7 @@ def pps_check_dates_ajax(request):
 
 
 @login_required()
+@controller(name='pps_hydrograph_ajax', url='pps_hydrograph_ajax')
 def pps_hydrograph_ajax(request):
     """AJAX Controller for the preprocessing page. Creates a Hydrograph given the Interpolation method selected"""
 
@@ -300,6 +305,7 @@ def pps_hydrograph_ajax(request):
 
 
 @login_required()
+@controller(name='pps_csv', url='pps_csv')
 def pps_csv(request):
     # noinspection PyBroadException
     try:
@@ -376,6 +382,7 @@ def pps_csv(request):
 
 
 @login_required()
+@controller(name='merge_two_datasets', url='merge_two_datasets')
 def merge_two_datasets(request):
     """
     Controller for the merge_two_datasets page.
@@ -407,6 +414,7 @@ def merge_two_datasets(request):
 
 
 @login_required()
+@controller(name='merged_hydrograph', url='merged_hydrograph')
 def merged_hydrograph(request):
     """
     AJAX Controller for the merge_two_datasets page to plot a hydrograph of the datasets when merged.
@@ -529,6 +537,7 @@ def merged_hydrograph(request):
 
 
 @login_required()
+@controller(name='merged_csv_download', url='merged_csv_download')
 def merged_csv_download(request):
     """
     AJAX Controller for the merge_two_datasets page to plot a hydrograph of the datasets when merged.
@@ -591,6 +600,7 @@ def merged_csv_download(request):
 
 
 @login_required()
+@controller(name='validate_historical', url='validate_historical')
 def validate_historical(request):
     """
     Controller for page to upload data to perform analysis on a single stream reach.
@@ -605,6 +615,7 @@ def validate_historical(request):
 
 
 @login_required()
+@controller(name='get_metric_names_abbr', url='get_metric_names_abbr')
 def get_metric_names_abbr(request):
     # noinspection PyBroadException
     try:
@@ -632,6 +643,7 @@ def get_metric_names_abbr(request):
 
 
 @login_required()
+@controller(name='hydrograph_ajax_plotly', url='hydrograph_ajax_plotly')
 def hydrograph_ajax_plotly(request):
     try:
         if request.method == 'POST':
@@ -668,6 +680,7 @@ def hydrograph_ajax_plotly(request):
 
 
 @login_required()
+@controller(name='hydrograph_daily_avg_ajax_plotly', url='hydrograph_daily_avg_ajax_plotly')
 def hydrograph_daily_avg_ajax_plotly(request):
     if request.method == 'POST':
 
@@ -699,6 +712,7 @@ def hydrograph_daily_avg_ajax_plotly(request):
 
 
 @login_required()
+@controller(name='scatter_ajax_plotly', url='scatter_ajax_plotly')
 def scatter_ajax_plotly(request):
     """
     :param request: Request from the client side.
@@ -753,6 +767,7 @@ def scatter_ajax_plotly(request):
 
 
 @login_required()
+@controller(name='make_table_ajax', url='make_table_ajax')
 def make_table_ajax(request):
     """AJAX controller to make a table and display the html for the user."""
 
@@ -964,6 +979,7 @@ def make_table_ajax(request):
 
 
 @login_required()
+@controller(name='volume_table_ajax', url='volume_table_ajax')
 def volume_table_ajax(request):
     """Calculates the volumes of two streams"""
 
@@ -987,6 +1003,7 @@ def volume_table_ajax(request):
 
 
 @login_required()
+@controller(name='create_persistence_benchmark', url='create_persistence_benchmark')
 def create_persistence_benchmark(request):
     context = {}
 
@@ -994,6 +1011,7 @@ def create_persistence_benchmark(request):
 
 
 @login_required()
+@controller(name='visualize_persistence_benchmark', url='visualize_persistence_benchmark')
 def visualize_persistence_benchmark(request):
     try:
         if request.method == "POST":
@@ -1053,6 +1071,7 @@ def visualize_persistence_benchmark(request):
 
 
 @login_required()
+@controller(name='persistence_benchmark_download', url='persistence_benchmark_download')
 def persistence_benchmark_download(request):
     print("In the download persistence benchmark controller")
     try:
@@ -1110,6 +1129,7 @@ def persistence_benchmark_download(request):
 
 
 @login_required()
+@controller(name='process_a_forecast', url='process_a_forecast')
 def process_a_forecast(request):
     context = {}
 
@@ -1117,6 +1137,7 @@ def process_a_forecast(request):
 
 
 @login_required()
+@controller(name='forecast_raw_data_ajax', url='forecast_raw_data_ajax')
 def forecast_raw_data_ajax(request):
     print("In the raw forecast data ajax controller!")
 
@@ -1149,6 +1170,7 @@ def forecast_raw_data_ajax(request):
 
 
 @login_required()
+@controller(name='forecast_check_dates_ajax', url='forecast_check_dates_ajax')
 def forecast_check_dates_ajax(request):
     """AJAX Controller for the preprocessing page. Checks if the user has made sure that the date range is included in
     the timeseries data"""
@@ -1188,6 +1210,7 @@ def forecast_check_dates_ajax(request):
 
 
 @login_required()
+@controller(name='forecast_plot_ajax', url='forecast_plot_ajax')
 def forecast_plot_ajax(request):
     """
     Controller to create a plot of the processed forecast
@@ -1244,6 +1267,7 @@ def forecast_plot_ajax(request):
 
 
 @login_required()
+@controller(name='forecast_csv_ajax', url='forecast_csv_ajax')
 def forecast_csv_ajax(request):
     """Controller to return a csv download of the preprocessed CSV"""
     if request.method == "POST":
@@ -1288,6 +1312,7 @@ def forecast_csv_ajax(request):
 
 
 @login_required()
+@controller(name='merge_forecast', url='merge_forecast')
 def merge_forecast(request):
     context = {}
 
@@ -1295,6 +1320,7 @@ def merge_forecast(request):
 
 
 @login_required()
+@controller(name='merge_forecast_plot_ajax', url='merge_forecast_plot_ajax')
 def merge_forecast_plot_ajax(request):
     # noinspection PyBroadException
     try:
@@ -1341,6 +1367,7 @@ def merge_forecast_plot_ajax(request):
         return JsonResponse(response)
 
 
+@controller(name='merge_forecast_download_ajax', url='merge_forecast_download_ajax')
 def merge_forecast_download_ajax(request):
     # noinspection PyBroadException
     try:
@@ -1379,6 +1406,7 @@ def merge_forecast_download_ajax(request):
 
 
 @login_required()
+@controller(name='validate_forecast', url='validate_forecast')
 def validate_forecast(request):
     context = {}
 
@@ -1386,6 +1414,7 @@ def validate_forecast(request):
 
 
 @login_required()
+@controller(name='validate_forecast_plot', url='validate_forecast_plot')
 def validate_forecast_plot(request):
     try:
         forecast_csv = request.FILES.get('forecast_csv', None)
@@ -1537,6 +1566,7 @@ def validate_forecast_plot(request):
 
 
 @login_required()
+@controller(name='validate_forecast_ensemble_metrics', url='validate_forecast_ensemble_metrics')
 def validate_forecast_ensemble_metrics(request):
     if request.method == "POST":
         try:
@@ -1659,6 +1689,7 @@ def validate_forecast_ensemble_metrics(request):
 
 
 @login_required()
+@controller(name='validate_forecast_binary_metrics', url='validate_forecast_binary_metrics')
 def validate_forecast_binary_metrics(request):
 
     try:
@@ -1739,6 +1770,7 @@ def validate_forecast_binary_metrics(request):
 
 
 @login_required()
+@controller(name='timeseries_csv_example', url='timeseries_csv_example')
 def timeseries_csv_example(request):
     context = {}
 
@@ -1746,6 +1778,7 @@ def timeseries_csv_example(request):
 
 
 @login_required()
+@controller(name='merged_timeseries_csv_example', url='merged_timeseries_csv_example')
 def merged_timeseries_csv_example(request):
     context = {}
 
@@ -1753,6 +1786,7 @@ def merged_timeseries_csv_example(request):
 
 
 @login_required()
+@controller(name='forecast_csv_example', url='forecast_csv_example')
 def forecast_csv_example(request):
     context = {}
 
@@ -1760,6 +1794,7 @@ def forecast_csv_example(request):
 
 
 @login_required()
+@controller(name='merged_forecast_csv_example', url='merged_forecast_csv_example')
 def merged_forecast_csv_example(request):
     context = {}
 
@@ -1767,5 +1802,6 @@ def merged_forecast_csv_example(request):
 
 
 @login_required()
+@controller(name='test', url='test')
 def test(request):
     return render(request, 'statistics_calc/test.html', {})
